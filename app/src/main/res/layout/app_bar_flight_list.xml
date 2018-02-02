@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="za.co.dvt.spillay.flyaway.FlightList">
+    tools:context=".ViewModel.AddFlight.presentation.FlightList.FlightList">
 
     <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
