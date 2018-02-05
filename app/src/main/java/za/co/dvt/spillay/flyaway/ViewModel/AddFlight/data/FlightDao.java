@@ -18,7 +18,7 @@ public interface FlightDao
     void insert(Flight flight);
 
     @Query("SELECT * FROM Flights ORDER BY FlightId DESC")
-    
+
     LiveData<List<Flight>> getAllFlights();
 
 }
