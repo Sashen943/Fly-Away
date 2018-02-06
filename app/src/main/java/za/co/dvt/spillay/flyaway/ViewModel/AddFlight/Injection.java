@@ -14,7 +14,7 @@ public class Injection {
 
     private static FlightRepository flightRepository = null;
 
-    public static FlightRepository getInstance(final Context context) {
+    public static FlightRepository getFlightRepositoryInstance(final Context context) {
         if (flightRepository == null) {
             synchronized (FlightRepository.class) {
                 if (flightRepository == null) {

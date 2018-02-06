@@ -6,6 +6,7 @@ import android.arch.lifecycle.LiveData;
 
 import java.util.List;
 
+import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.Injection;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.repository.FlightRepository;
 
@@ -22,7 +23,7 @@ public class FlightViewModel extends AndroidViewModel
     public FlightViewModel( Application application )
     {
         super(application);
-
+        flightRepository = Injection.getFlightRepositoryInstance(application);
         flights = flightRepository.getListFlights();
     }
 
