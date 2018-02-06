@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewModel.AddFlight.presentation.AddFlight.AddFlight">
+    tools:context=".ViewModel.AddFlight.presentation.flight.add.AddFlight">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_flight_time" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/txt_flight_to"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -98,6 +98,6 @@
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_flight_to" />
 
 </android.support.constraint.ConstraintLayout>
