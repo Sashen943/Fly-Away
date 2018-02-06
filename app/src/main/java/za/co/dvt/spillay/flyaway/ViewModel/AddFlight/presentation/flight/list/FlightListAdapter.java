@@ -39,12 +39,14 @@ public class FlightListAdapter extends  RecyclerView.Adapter<FlightListAdapter.F
     }
 
 
-    public FlightListAdapter(List<Flight> flights) {
+    public FlightListAdapter(List<Flight> flights)
+    {
         this.flights = flights;
     }
 
     @Override
-    public FlightViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FlightViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new FlightViewHolder(view);
     }

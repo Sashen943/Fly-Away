@@ -32,21 +32,16 @@ public class FlightListActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_list);
-
         recyclerViewFlights = findViewById(R.id.recycler_view_flights);
-
         recyclerViewFlights.setLayoutManager(new LinearLayoutManager(this));
-
         flightsAdapter = new FlightListAdapter(null);
         recyclerViewFlights.setAdapter(flightsAdapter);
-
-
         setupViewModels();
-
         setupButtons();
     }
 
-    private void setupButtons() {
+    private void setupButtons()
+    {
         FloatingActionButton floatingActionButton = findViewById(R.id.fab_add_flight);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
