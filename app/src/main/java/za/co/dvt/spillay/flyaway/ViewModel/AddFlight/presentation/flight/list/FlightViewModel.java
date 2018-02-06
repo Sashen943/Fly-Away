@@ -1,4 +1,4 @@
-package za.co.dvt.spillay.flyaway.ViewModel.AddFlight.viewmodel;
+package za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.list;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -16,14 +16,14 @@ import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.repository.FlightRepository
 public class FlightViewModel extends AndroidViewModel
 {
     private FlightRepository flightRepository;
-    private LiveData < List < Flight > > flights;
+    private LiveData <List<Flight>> flights;
 
     //constructor
     public FlightViewModel( Application application )
     {
         super(application);
-        flightRepository = new FlightRepository(application);
-        flights = flightRepository.getAllFlights();
+
+        flights = flightRepository.getListFlights();
     }
 
     //get all fights
@@ -34,7 +34,7 @@ public class FlightViewModel extends AndroidViewModel
 
     public void insert(Flight flight)
     {
-        flightRepository.insert(flight);
+        flightRepository.insertFlight(flight);
     }
 
 

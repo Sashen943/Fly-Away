@@ -13,22 +13,22 @@ import android.content.Context;
 public abstract class FlightRoomDatabase extends RoomDatabase
 {
 
-    private static FlightRoomDatabase INSTANCE;
+    public abstract FlightDao getFlighDao();
 
-    public abstract FlightDao flightDao();
-    public static FlightRoomDatabase getDatabase(final Context context)
-    {
-        if ( INSTANCE == null )
-        {
-            synchronized ( FlightRoomDatabase.class )
-            {
-                if ( INSTANCE == null)
-                {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext() , FlightRoomDatabase.class , "Flights" ).build();
+    private static FlightRoomDatabase sInstance;
+
+    public static FlightRoomDatabase getInstance(final Context context) {
+        if (sInstance == null) {
+            synchronized (FlightRoomDatabase.class) {
+                if (sInstance == null) {
+                    sInstance = buildDatabase(context.getApplicationContext());
                 }
             }
         }
-        return INSTANCE;
+        return sInstance;
     }
 
+    private static FlightRoomDatabase buildDatabase(final Context appContext) {
+        return Room.databaseBuilder(appContext, FlightRoomDatabase.class, "recipes_db").build();
+    }
 }

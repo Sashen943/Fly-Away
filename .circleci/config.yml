@@ -16,7 +16,9 @@ jobs:
       - run:
             name: chmod permissions
             command: chmod +x ./gradlew
-     
+      - run:
+            name: build
+            command: gradlew build
       - save_cache:
             paths:
                 - ~/.gradle

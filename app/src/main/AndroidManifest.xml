@@ -9,17 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ViewModel.AddFlight.presentation.FlightList.FlightList"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ViewModel.AddFlight.presentation.flight.add.AddFlight"></activity>
+        <activity android:name=".ViewModel.AddFlight.presentation.flight.list.FlightListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewModel.AddFlight.presentation.AddFlight.AddFlight"></activity>
     </application>
 
 </manifest>

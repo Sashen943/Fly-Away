@@ -8,31 +8,31 @@ import android.support.annotation.NonNull;
 /**
  * Created by SPillay on 2018/02/05.
  */
-@Entity(tableName = "Words")
+@Entity(tableName = "Flights")
 public class Flight
 {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey ( autoGenerate = true )
     @NonNull
-    @ColumnInfo(name = "FlightId")
+    @ColumnInfo ( name = "FlightId" )
     private int FlightId;
 
-    @ColumnInfo(name ="Reference_Number")
+    @ColumnInfo ( name = "Reference_Number" )
     private String refrenceNumber;
 
-    @ColumnInfo(name ="Date")
+    @ColumnInfo( name = "Date" )
     private String Date;
 
-    @ColumnInfo(name ="Time")
+    @ColumnInfo( name = "Time" )
     private String Time;
 
-    @ColumnInfo(name ="From")
+    @ColumnInfo( name = "From")
     private String From;
 
-    @ColumnInfo(name ="To")
+    @ColumnInfo( name = "To" )
     private String To;
 
     //constructor
-    public Flight(String refrenceNumber, String Date, String Time, String From, String To)
+    public Flight( String refrenceNumber , String Date , String Time , String From , String To )
     {
         this.refrenceNumber = refrenceNumber;
         this.Date = Date;
@@ -47,7 +47,7 @@ public class Flight
         return refrenceNumber;
     }
 
-    public void setRefrenceNumber(String refrenceNumber)
+    public void setRefrenceNumber( String refrenceNumber )
     {
         this.refrenceNumber = refrenceNumber;
     }
@@ -57,7 +57,7 @@ public class Flight
         return Date;
     }
 
-    public void setDate(String date)
+    public void setDate( String date )
     {
         Date = date;
     }
@@ -67,7 +67,7 @@ public class Flight
         return Time;
     }
 
-    public void setTime(String time)
+    public void setTime( String time )
     {
         Time = time;
     }
@@ -77,7 +77,7 @@ public class Flight
         return From;
     }
 
-    public void setFrom(String from)
+    public void setFrom( String from )
     {
         From = from;
     }
@@ -87,7 +87,7 @@ public class Flight
         return To;
     }
 
-    public void setTo(String to)
+    public void setTo( String to )
     {
         To = to;
     }
@@ -98,7 +98,7 @@ public class Flight
         return FlightId;
     }
 
-    public void setFlightId(@NonNull int flightId)
+    public void setFlightId( @NonNull int flightId )
     {
         FlightId = flightId;
     }

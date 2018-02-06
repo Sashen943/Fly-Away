@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewModel.AddFlight.presentation.AddFlight.AddFlight">
+    tools:context=".ViewModel.AddFlight.presentation.flight.add.AddFlight">
 
     <ImageView
         android:id="@+id/imageView2"
