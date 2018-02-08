@@ -17,31 +17,24 @@ import za.co.dvt.spillay.flyaway.R;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.add.AddFlight;
 
-/**
- * Created by SPillay on 2018/02/06.
- */
-
-public class FlightListActivity extends AppCompatActivity
-{
+public class FlightListActivity extends AppCompatActivity {
     RecyclerView recyclerViewFlights;
     FlightListAdapter flightsAdapter;
     FlightViewModel flightViewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_list);
         recyclerViewFlights = findViewById(R.id.recycler_view_flights);
         recyclerViewFlights.setLayoutManager(new LinearLayoutManager(this));
-        flightsAdapter = new FlightListAdapter(null);
-        recyclerViewFlights.setAdapter(flightsAdapter);
         setupViewModels();
         setupButtons();
+        flightsAdapter = new FlightListAdapter(this);
+        recyclerViewFlights.setAdapter(flightsAdapter);
     }
 
-    private void setupButtons()
-    {
+    private void setupButtons() {
         FloatingActionButton floatingActionButton = findViewById(R.id.fab_add_flight);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,15 +45,12 @@ public class FlightListActivity extends AppCompatActivity
         });
     }
 
-    private void setupViewModels()
-    {
+    private void setupViewModels() {
         flightViewModel = ViewModelProviders.of(this).get(FlightViewModel.class);
 
-        flightViewModel.getFlights().observe(this, new Observer<List<Flight>>()
-        {
+        flightViewModel.getFlights().observe(this, new Observer<List<Flight>>() {
             @Override
-            public void onChanged(@Nullable List<Flight> flights)
-            {
+            public void onChanged(@Nullable List<Flight> flights) {
                 flightsAdapter.setFlights(flights);
             }
         });

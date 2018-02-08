@@ -5,13 +5,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-/**
- * Created by SPillay on 2018/02/05.
- */
-
 @Database(entities = {Flight.class}, version = 1)
-public abstract class FlightRoomDatabase extends RoomDatabase
-{
+public abstract class FlightRoomDatabase extends RoomDatabase {
 
     public abstract FlightDao getFlighDao();
 
@@ -29,6 +24,6 @@ public abstract class FlightRoomDatabase extends RoomDatabase
     }
 
     private static FlightRoomDatabase buildDatabase(final Context appContext) {
-        return Room.databaseBuilder(appContext, FlightRoomDatabase.class, "recipes_db").build();
+        return Room.databaseBuilder(appContext, FlightRoomDatabase.class, "Flights").build();
     }
 }

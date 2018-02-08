@@ -11,15 +11,14 @@ import android.widget.TextView;
 import za.co.dvt.spillay.flyaway.R;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.list.FlightListActivity;
 
-public class AddFlight extends AppCompatActivity
-{
+public class AddFlight extends AppCompatActivity {
 
     TextView toTextView, fromTextView, dateTextView, timeTextView, refrenceNumberTextView;
-    Button btnAdd;
+    Button addButton;
     AddFlightViewModel addFlightViewModel;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_flight);
 
@@ -28,21 +27,19 @@ public class AddFlight extends AppCompatActivity
         dateTextView = findViewById(R.id.txt_flight_date);
         timeTextView = findViewById(R.id.txt_flight_time);
         refrenceNumberTextView = findViewById(R.id.txt_flight_reference_number);
-        btnAdd = findViewById(R.id.btn_add);
+        addButton = findViewById(R.id.btn_add);
 
         addFlightViewModel = ViewModelProviders.of(this).get(AddFlightViewModel.class);
 
-        btnAdd.setOnClickListener(new View.OnClickListener()
-        {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 String ref = refrenceNumberTextView.getText().toString();
                 String to = toTextView.getText().toString();
                 String from = fromTextView.getText().toString();
                 String date = dateTextView.getText().toString();
                 String time = timeTextView.getText().toString();
-                addFlightViewModel.saveFlight(ref,time,date,to,from);
+                addFlightViewModel.saveFlight(ref, time, date, to, from);
                 finish();
                 startActivity(new Intent(AddFlight.this, FlightListActivity.class));
             }

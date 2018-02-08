@@ -1,5 +1,6 @@
 package za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.list;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,49 +12,41 @@ import java.util.List;
 import za.co.dvt.spillay.flyaway.R;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 
-/**
- * Created by SPillay on 2018/02/05.
- */
 
-public class FlightListAdapter extends  RecyclerView.Adapter<FlightListAdapter.FlightViewHolder>
-{
+public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.FlightViewHolder> {
     private List<Flight> flights;
-    class FlightViewHolder extends RecyclerView.ViewHolder
-    {
+
+    class FlightViewHolder extends RecyclerView.ViewHolder {
         TextView fromTextView;
         TextView toTextView;
         TextView dateTextView;
         TextView timeTextView;
         TextView refrenceNumberTextView;
 
-        public FlightViewHolder(View itemView)
-        {
+        public FlightViewHolder(View itemView) {
             super(itemView);
             fromTextView = itemView.findViewById(R.id.txt_flight_from);
-            toTextView = itemView.findViewById(R.id.txt_flight_from);
-            timeTextView = itemView.findViewById(R.id.txt_flight_from);
-            dateTextView = itemView.findViewById(R.id.txt_flight_from);
-            refrenceNumberTextView = itemView.findViewById(R.id.txt_flight_from);
+            toTextView = itemView.findViewById(R.id.txt_flight_to);
+            timeTextView = itemView.findViewById(R.id.txt_flight_time);
+            dateTextView = itemView.findViewById(R.id.txt_flight_date);
+            refrenceNumberTextView = itemView.findViewById(R.id.txt_flight_reference);
 
         }
     }
 
+    public FlightListAdapter(Context context) {
+        //this.flights = flights;
 
-    public FlightListAdapter(List<Flight> flights)
-    {
-        this.flights = flights;
     }
 
     @Override
-    public FlightViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-    {
+    public FlightViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new FlightViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(FlightViewHolder holder, int position)
-    {
+    public void onBindViewHolder(FlightViewHolder holder, int position) {
         Flight flight = flights.get(position);
 
         holder.fromTextView.setText(flight.getFrom());
@@ -64,17 +57,14 @@ public class FlightListAdapter extends  RecyclerView.Adapter<FlightListAdapter.F
     }
 
     @Override
-    public int getItemCount()
-    {
-        if (flights == null)
-        {
+    public int getItemCount() {
+        if (flights == null) {
             return 0;
         }
         return flights.size();
     }
 
-    public void setFlights(List<Flight> flights)
-    {
+    public void setFlights(List<Flight> flights) {
         this.flights = flights;
         notifyDataSetChanged();
     }
