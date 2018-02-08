@@ -8,9 +8,6 @@ import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.Injection;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.repository.FlightRepository;
 
-/**
- * Created by SPillay on 2018/02/06.
- */
 
 public class AddFlightViewModel extends AndroidViewModel {
 
@@ -21,9 +18,8 @@ public class AddFlightViewModel extends AndroidViewModel {
         flightRepository = Injection.getFlightRepositoryInstance(application);
     }
 
-    public void saveFlight(String refrenceNumber, String time, String date, String to, String from)
-    {
-        Flight flight = new Flight( refrenceNumber , date , time , from , to );
+    public void saveFlight(String refrenceNumber, String time, String date, String to, String from) {
+        Flight flight = new Flight(refrenceNumber, date, time, from, to);
 
         flightRepository.insertFlight(flight);
     }
