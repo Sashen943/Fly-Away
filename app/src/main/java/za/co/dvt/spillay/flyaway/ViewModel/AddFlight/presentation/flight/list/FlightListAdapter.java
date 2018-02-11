@@ -1,6 +1,5 @@
 package za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.list;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,22 +20,17 @@ public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.Fl
         TextView toTextView;
         TextView dateTextView;
         TextView timeTextView;
-        TextView refrenceNumberTextView;
+        TextView referenceNumberTextView;
 
-        public FlightViewHolder(View itemView) {
+        private FlightViewHolder(View itemView) {
             super(itemView);
             fromTextView = itemView.findViewById(R.id.txt_flight_from);
             toTextView = itemView.findViewById(R.id.txt_flight_to);
             timeTextView = itemView.findViewById(R.id.txt_flight_time);
             dateTextView = itemView.findViewById(R.id.txt_flight_date);
-            refrenceNumberTextView = itemView.findViewById(R.id.txt_flight_reference);
+            referenceNumberTextView = itemView.findViewById(R.id.txt_flight_reference);
 
         }
-    }
-
-    public FlightListAdapter(Context context) {
-        //this.flights = flights;
-
     }
 
     @Override
@@ -51,9 +45,9 @@ public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.Fl
 
         holder.fromTextView.setText(flight.getFrom());
         holder.toTextView.setText(flight.getTo());
-        holder.dateTextView.setText(flight.getDate());
-        holder.refrenceNumberTextView.setText(flight.getRefrenceNumber());
-        holder.timeTextView.setText(flight.getTime());
+        holder.dateTextView.setText("Date: " + flight.getDate());
+        holder.referenceNumberTextView.setText(flight.getReferenceNumber());
+        holder.timeTextView.setText("Time: " + flight.getTime());
     }
 
     @Override

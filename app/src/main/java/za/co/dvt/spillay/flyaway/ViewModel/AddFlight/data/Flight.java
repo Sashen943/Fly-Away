@@ -14,15 +14,15 @@ public class Flight {
     @NonNull
     @ColumnInfo(name = "flightId")
     private int flightId;
-    private String refrenceNumber;
+    private String referenceNumber;
     private String date;
     private String time;
     private String from;
     private String to;
 
     //constructor
-    public Flight(String refrenceNumber, String date, String time, String from, String to) {
-        this.refrenceNumber = refrenceNumber;
+    public Flight(String referenceNumber, String date, String time, String from, String to) {
+        this.referenceNumber = referenceNumber;
         this.date = date;
         this.time = time;
         this.from = from;
@@ -30,20 +30,12 @@ public class Flight {
     }
 
     //Getters and setters
-    public String getRefrenceNumber() {
-        return refrenceNumber;
-    }
-
-    public void setRefrenceNumber(String refrenceNumber) {
-        this.refrenceNumber = refrenceNumber;
+    public String getReferenceNumber() {
+        return referenceNumber;
     }
 
     public String getDate() {
         return this.date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getTime() {
@@ -64,10 +56,6 @@ public class Flight {
 
     public String getTo() {
         return this.to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
     }
 
     @NonNull

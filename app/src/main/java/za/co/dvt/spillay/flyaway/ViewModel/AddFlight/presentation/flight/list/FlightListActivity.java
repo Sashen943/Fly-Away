@@ -30,7 +30,7 @@ public class FlightListActivity extends AppCompatActivity {
         recyclerViewFlights.setLayoutManager(new LinearLayoutManager(this));
         setupViewModels();
         setupButtons();
-        flightsAdapter = new FlightListAdapter(this);
+        flightsAdapter = new FlightListAdapter();
         recyclerViewFlights.setAdapter(flightsAdapter);
     }
 

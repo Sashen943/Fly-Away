@@ -18,8 +18,8 @@ public class AddFlightViewModel extends AndroidViewModel {
         flightRepository = Injection.getFlightRepositoryInstance(application);
     }
 
-    public void saveFlight(String refrenceNumber, String time, String date, String to, String from) {
-        Flight flight = new Flight(refrenceNumber, date, time, from, to);
+    public void saveFlight(String referenceNumber, String time, String date, String to, String from) {
+        Flight flight = new Flight(referenceNumber, date, time, from, to);
 
         flightRepository.insertFlight(flight);
     }

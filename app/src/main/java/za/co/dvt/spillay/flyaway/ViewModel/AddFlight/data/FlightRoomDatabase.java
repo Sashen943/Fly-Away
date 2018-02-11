@@ -5,22 +5,22 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-@Database(entities = {Flight.class}, version = 1)
+@Database(entities = {Flight.class}, version = 2)
 public abstract class FlightRoomDatabase extends RoomDatabase {
 
-    public abstract FlightDao getFlighDao();
+    public abstract FlightDao getFlightDao();
 
-    private static FlightRoomDatabase sInstance;
+    private static FlightRoomDatabase instance;
 
     public static FlightRoomDatabase getInstance(final Context context) {
-        if (sInstance == null) {
+        if (instance == null) {
             synchronized (FlightRoomDatabase.class) {
-                if (sInstance == null) {
-                    sInstance = buildDatabase(context.getApplicationContext());
+                if (instance == null) {
+                    instance = buildDatabase(context.getApplicationContext());
                 }
             }
         }
-        return sInstance;
+        return instance;
     }
 
     private static FlightRoomDatabase buildDatabase(final Context appContext) {
