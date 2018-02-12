@@ -14,11 +14,10 @@ public class Injection {
         if (flightRepository == null) {
             synchronized (FlightRepository.class) {
                 if (flightRepository == null) {
-                    flightRepository = new FlightRepositoryImpl(FlightRoomDatabase.getInstance(context).getFlighDao());
+                    flightRepository = new FlightRepositoryImpl(FlightRoomDatabase.getInstance(context).getFlightDao());
                 }
             }
         }
         return flightRepository;
     }
-
 }

@@ -14,7 +14,6 @@ public class FlightRepositoryImpl implements FlightRepository {
         this.flightDao = flightDao;
     }
 
-
     @Override
     public LiveData<List<Flight>> getListFlights() {
         return flightDao.getAllFlights();

@@ -25,9 +25,4 @@ public class FlightViewModel extends AndroidViewModel {
     public LiveData<List<Flight>> getFlights() {
         return flights;
     }
-
-    public void insert(Flight flight) {
-        flightRepository.insertFlight(flight);
-    }
-
 }
