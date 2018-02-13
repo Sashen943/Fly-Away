@@ -13,7 +13,13 @@ import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 
 
 public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.FlightViewHolder> {
+    private final View.OnClickListener itemClickListener;
     private List<Flight> flights;
+
+
+    public FlightListAdapter(View.OnClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
 
     class FlightViewHolder extends RecyclerView.ViewHolder {
         TextView fromTextView;
@@ -42,12 +48,13 @@ public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.Fl
     @Override
     public void onBindViewHolder(FlightViewHolder holder, int position) {
         Flight flight = flights.get(position);
-
         holder.fromTextView.setText(flight.getFrom());
         holder.toTextView.setText(flight.getTo());
         holder.dateTextView.setText("Date: " + flight.getDate());
         holder.referenceNumberTextView.setText(flight.getReferenceNumber());
         holder.timeTextView.setText("Time: " + flight.getTime());
+        holder.itemView.setOnClickListener(itemClickListener);
+        holder.itemView.setTag(flight);
     }
 
     @Override

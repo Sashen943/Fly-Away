@@ -11,5 +11,13 @@ public interface FlightRepository {
 
     LiveData<List<Flight>> getListFlights();
 
+    void getFlight(int flightId, RepositoryCallback repositoryCallback);
+
     void insertFlight(Flight flight);
+
+    interface RepositoryCallback {
+        void onFlightLoaded(Flight flight);
+
+        void onError(Exception e);
+    }
 }

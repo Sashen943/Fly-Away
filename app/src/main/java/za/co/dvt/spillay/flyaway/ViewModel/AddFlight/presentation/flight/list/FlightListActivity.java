@@ -16,6 +16,7 @@ import java.util.List;
 import za.co.dvt.spillay.flyaway.R;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.add.AddFlight;
+import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.details.FlightDetailsActivity;
 
 public class FlightListActivity extends AppCompatActivity {
     RecyclerView recyclerViewFlights;
@@ -30,7 +31,16 @@ public class FlightListActivity extends AppCompatActivity {
         recyclerViewFlights.setLayoutManager(new LinearLayoutManager(this));
         setupViewModels();
         setupButtons();
-        flightsAdapter = new FlightListAdapter();
+        flightsAdapter = new FlightListAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Flight flight = (Flight) v.getTag();
+                int flightId = flight.getFlightId();
+                Intent i = new Intent(FlightListActivity.this, FlightDetailsActivity.class);
+                i.putExtra("FLIGHT_ID", Integer.toString(flightId));
+                startActivity(i);
+            }
+        });
         recyclerViewFlights.setAdapter(flightsAdapter);
     }
 
@@ -39,7 +49,6 @@ public class FlightListActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 startActivity(new Intent(FlightListActivity.this, AddFlight.class));
             }
         });
@@ -55,4 +64,6 @@ public class FlightListActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
