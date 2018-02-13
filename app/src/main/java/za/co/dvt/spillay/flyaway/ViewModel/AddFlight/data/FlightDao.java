@@ -15,4 +15,6 @@ public interface FlightDao {
     @Query("SELECT * FROM Flights ORDER BY FlightId DESC")
     LiveData<List<Flight>> getAllFlights();
 
+    @Query("SELECT * FROM Flights WHERE flightId=:flightId")
+    Flight getFlightDetails(int flightId);
 }

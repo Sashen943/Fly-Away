@@ -20,6 +20,11 @@ public class FlightRepositoryImpl implements FlightRepository {
     }
 
     @Override
+    public void getFlight(int flightId, RepositoryCallback repositoryCallback) {
+        new GetFlightAsyncTask(flightId, flightDao, repositoryCallback).execute();
+    }
+
+    @Override
     public void insertFlight(Flight flight) {
         new AddFlightAsyncTask(flightDao, flight).execute();
     }

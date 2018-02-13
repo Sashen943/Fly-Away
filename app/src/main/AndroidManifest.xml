@@ -10,12 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ViewModel.AddFlight.presentation.flight.add.AddFlight"></activity>
-        <activity android:name=".ViewModel.AddFlight.presentation.flight.list.FlightListActivity">
+        <activity android:name=".ViewModel.AddFlight.presentation.flight.details.FlightDetailsActivity"></activity>
+        <activity android:name=".ViewModel.AddFlight.presentation.flight.list.FlightListActivity"></activity>
+        <activity android:name=".ViewModel.AddFlight.presentation.flight.splash.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
