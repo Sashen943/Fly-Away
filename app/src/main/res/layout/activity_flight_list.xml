@@ -2,7 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_flights"
@@ -20,10 +21,10 @@
         android:id="@+id/fab_add_flight"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        app:backgroundTint="@color/colorAccent"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        app:backgroundTint="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/white_plus" />
+        app:srcCompat="@drawable/add_flight" />
 </android.support.constraint.ConstraintLayout>
