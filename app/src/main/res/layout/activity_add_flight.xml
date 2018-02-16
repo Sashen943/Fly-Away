@@ -120,9 +120,10 @@
 
             <Button
                 android:id="@+id/back_button"
-                style="@style/Widget.AppCompat.Button.Borderless"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="0dp"
                 android:text="@string/cancel_button" />
         </LinearLayout>
 

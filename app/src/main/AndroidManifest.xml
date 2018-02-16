@@ -18,5 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        android:supportsRtl="true"
     </application>
 </manifest>

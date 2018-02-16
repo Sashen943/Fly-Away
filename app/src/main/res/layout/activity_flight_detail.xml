@@ -29,7 +29,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/app_background" />
+                app:srcCompat="@drawable/app_background_deatils" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/reference_cardview"
@@ -91,7 +91,7 @@
                     tools:layout_editor_absoluteY="294dp">
 
                     <ImageView
-                        android:id="@+id/calendar_icon_imageview"
+                        android:id="@+id/ic_calendar_icon_imageview"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginBottom="8dp"
@@ -114,7 +114,7 @@
                         android:textAppearance="@android:style/TextAppearance.Material.Medium"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/calendar_icon_imageview"
+                        app:layout_constraintStart_toEndOf="@+id/ic_calendar_icon_imageview"
                         app:layout_constraintTop_toTopOf="parent" />
                 </android.support.constraint.ConstraintLayout>
 
@@ -135,7 +135,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/calendar_icon_imageview"
+                        android:id="@+id/ic_calendar_icon_imageview"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginBottom="8dp"
@@ -158,7 +158,7 @@
                         android:textAppearance="@android:style/TextAppearance.Material.Medium"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/calendar_icon_imageview"
+                        app:layout_constraintStart_toEndOf="@+id/ic_calendar_icon_imageview"
                         app:layout_constraintTop_toTopOf="parent" />
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
