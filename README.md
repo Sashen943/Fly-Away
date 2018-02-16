@@ -3,3 +3,12 @@ An android application that keeps track of all your flights. This application is
 
 # Build Status
 [![CircleCI](https://circleci.com/gh/Sashen943/FlyAway.svg?style=svg)](https://circleci.com/gh/Sashen943/FlyAway)
+
+# How to use
+Its simple! just Install and add your flights.
+
+# Coming soon...
+- Input for reference number only and flight data will be auto matically added.
+- Push notifiction for flights that are about to leave
+- Flight status information
+
