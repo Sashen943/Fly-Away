@@ -12,4 +12,6 @@
     <string name="flight_from">Johannesburg</string>
     <string name="flight_to">Durban</string>
     <string name="add_button">Add</string>
+    <string name="splash_title">Fly Away</string>
+    <string name="splash_subtitle">Never miss a flight again</string>
 </resources>

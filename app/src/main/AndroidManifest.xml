@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewModel.AddFlight.presentation.flight.add.AddFlight"></activity>
+        <activity android:name=".ViewModel.AddFlight.presentation.flight.add.AddFlightActivity"></activity>
         <activity android:name=".ViewModel.AddFlight.presentation.flight.details.FlightDetailsActivity"></activity>
         <activity android:name=".ViewModel.AddFlight.presentation.flight.list.FlightListActivity"></activity>
         <activity android:name=".ViewModel.AddFlight.presentation.flight.splash.SplashScreenActivity">

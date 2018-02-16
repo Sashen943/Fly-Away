@@ -15,7 +15,7 @@ import java.util.List;
 
 import za.co.dvt.spillay.flyaway.R;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
-import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.add.AddFlight;
+import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.add.AddFlightActivity;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.details.FlightDetailsActivity;
 
 public class FlightListActivity extends AppCompatActivity {
@@ -49,7 +49,7 @@ public class FlightListActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FlightListActivity.this, AddFlight.class));
+                startActivity(new Intent(FlightListActivity.this, AddFlightActivity.class));
             }
         });
     }

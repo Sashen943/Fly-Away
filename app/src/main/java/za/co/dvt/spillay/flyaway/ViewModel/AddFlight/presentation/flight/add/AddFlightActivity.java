@@ -11,7 +11,7 @@ import android.widget.TextView;
 import za.co.dvt.spillay.flyaway.R;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.list.FlightListActivity;
 
-public class AddFlight extends AppCompatActivity {
+public class AddFlightActivity extends AppCompatActivity {
 
     TextView toTextView, fromTextView, dateTextView, timeTextView, refrenceNumberTextView;
     Button addButton, backButton;
@@ -27,7 +27,7 @@ public class AddFlight extends AppCompatActivity {
         dateTextView = findViewById(R.id.txt_flight_date);
         timeTextView = findViewById(R.id.txt_flight_time);
         refrenceNumberTextView = findViewById(R.id.txt_flight_reference_number);
-        addButton = findViewById(R.id.btn_add);
+        addButton = findViewById(R.id.add_button);
         backButton = findViewById(R.id.back_button);
 
         addFlightViewModel = ViewModelProviders.of(this).get(AddFlightViewModel.class);
@@ -42,14 +42,14 @@ public class AddFlight extends AppCompatActivity {
                 String time = timeTextView.getText().toString();
                 addFlightViewModel.saveFlight(ref, time, date, to, from);
                 finish();
-                startActivity(new Intent(AddFlight.this, FlightListActivity.class));
+                startActivity(new Intent(AddFlightActivity.this, FlightListActivity.class));
             }
         });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddFlight.this, FlightListActivity.class
+                startActivity(new Intent(AddFlightActivity.this, FlightListActivity.class
                 ));
             }
         });

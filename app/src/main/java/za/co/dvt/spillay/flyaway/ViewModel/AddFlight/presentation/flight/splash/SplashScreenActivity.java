@@ -26,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 changeScreen();
                 finish();
             }
-        }, 5000);
+        }, 3000);
     }
 
     public void changeScreen() {

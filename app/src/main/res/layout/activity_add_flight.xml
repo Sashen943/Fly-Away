@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewModel.AddFlight.presentation.flight.add.AddFlight">
+    tools:context=".ViewModel.AddFlight.presentation.flight.add.AddFlightActivity">
 
     <ScrollView
         android:id="@+id/flight_input_scrollview"
@@ -102,7 +102,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_flight_from" />
 
             <Button
-                android:id="@+id/btn_add"
+                android:id="@+id/add_button"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

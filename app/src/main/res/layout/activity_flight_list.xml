@@ -19,12 +19,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_add_flight"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
-        app:backgroundTint="@color/cardview_light_background"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/add_flight" />
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 </android.support.constraint.ConstraintLayout>
