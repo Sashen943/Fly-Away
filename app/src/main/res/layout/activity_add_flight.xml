@@ -110,6 +110,8 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/colorAccent"
                 android:elevation="30dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:text="@string/add_button"
                 android:textColor="@color/cardview_light_background"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -120,11 +122,14 @@
 
             <Button
                 android:id="@+id/back_button"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="0dp"
-                android:text="@string/cancel_button" />
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/cancel_button"
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
 
 
