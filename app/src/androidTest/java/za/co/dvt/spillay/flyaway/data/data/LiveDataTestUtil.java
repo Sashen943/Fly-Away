@@ -1,4 +1,4 @@
-package za.co.dvt.spillay.flyaway.data;
+package za.co.dvt.spillay.flyaway.data.data;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;

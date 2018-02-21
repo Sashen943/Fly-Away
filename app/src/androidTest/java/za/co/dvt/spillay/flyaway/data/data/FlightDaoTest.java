@@ -1,4 +1,4 @@
-package za.co.dvt.spillay.flyaway.data;
+package za.co.dvt.spillay.flyaway.data.data;
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule;
 import android.arch.persistence.room.Room;
@@ -31,6 +31,7 @@ public class FlightDaoTest {
     public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();
     private FlightRoomDatabase database;
     private FlightDao flightDao;
+    private Flight flight;
 
     @Before
     public void initDb() throws Exception {
@@ -38,6 +39,7 @@ public class FlightDaoTest {
                 FlightRoomDatabase.class)
                 .allowMainThreadQueries()
                 .build();
+        flight = new Flight("FGTRES", "12/12/2018", "02:02", "JHB", "DUR");
 
         flightDao = database.getFlightDao();
     }
@@ -49,16 +51,23 @@ public class FlightDaoTest {
 
     @Test
     public void onFetchingFlights_shouldGetEmptyList_ifDatabase_isEmpty() throws InterruptedException {
-        List<Flight> flightList = (List<Flight>) flightDao.getAllFlights();
+        List<Flight> flightList = LiveDataTestUtil.getValue(flightDao.getAllFlights());
         assertTrue(flightList.isEmpty());
     }
 
     @Test
     public void onInsertingFlights_checkIf_RowCountIsCorrect() throws InterruptedException {
-        final List<Flight> flightList = null;
-        flightList.forEach(flight -> {
-            flightDao.insert(flight);
-        });
+        final List<Flight> flightList = LiveDataTestUtil.getValue(flightDao.getAllFlights());
+
+        for (int i = 0; i < 5; i++) {
+            flightList.add(flight);
+        }
         assertEquals(5, LiveDataTestUtil.getValue(flightDao.getAllFlights()).size());
+    }
+
+    @Test
+    public void onFetchSpecificFlight_checkIf_insertedFlightIsReturned() throws InterruptedException {
+        flightDao.insert(flight);
+        assertEquals(1, flightDao.getFlightDetails(1).getFlightId());
     }
 }

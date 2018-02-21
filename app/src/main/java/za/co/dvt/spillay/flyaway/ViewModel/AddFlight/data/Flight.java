@@ -13,6 +13,7 @@ public class Flight {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "flightId")
+
     private int flightId;
     private String referenceNumber;
     private String date;

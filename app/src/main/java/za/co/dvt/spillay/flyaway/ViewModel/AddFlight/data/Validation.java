@@ -12,7 +12,7 @@ public class Validation {
     public static final String DATE = "^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$";
     public static final String REFERENCE_NUMBER = "^[A-Za-z0-9]{6}";
     public static final String TIME = "^([0-1]?[0-9]|[2][0-3]):([0-5][0-9])(:[0-5][0-9])?$";
-    public static final String CITY = "[A-Z][a-z]*";
+    public static final String CITY = "[A-Za-z]*";
 
     // Validates flight reference number
     public static boolean validateFlightReferenceNumber(String referenceNumber) {
