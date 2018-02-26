@@ -10,6 +10,8 @@ Its simple! just Install and add your flights.
 # Screenshots
 ![Screenshot](https://github.com/Sashen943/FlyAway/blob/mock_setup/app/src/main/res/drawable/flyawayscreenshot1.PNG)
 ![Screenshot](https://github.com/Sashen943/FlyAway/blob/mock_setup/app/src/main/res/drawable/flyawayscreenshot2.PNG)
+![Screenshot](https://github.com/Sashen943/FlyAway/blob/mock_setup/app/src/main/res/drawable/flyawayscreenshot3.PNG)
+![Screenshot](https://github.com/Sashen943/FlyAway/blob/mock_setup/app/src/main/res/drawable/flyawayscreenshot4.PNG)
 
 # Coming soon...
 - Input for reference number only and flight data will be auto matically added.
