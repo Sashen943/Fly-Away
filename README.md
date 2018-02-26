@@ -7,8 +7,15 @@ Circle CI: [![CircleCI](https://circleci.com/gh/Sashen943/FlyAway.svg?style=svg)
 # How to use
 Its simple! just Install and add your flights.
 
+# Screenshots
+![Screenshot](https://github.com/Sashen943/FlyAway/blob/mock_setup/app/src/main/res/drawable/flyawayscreenshot1.PNG)
+![Screenshot](https://github.com/Sashen943/FlyAway/blob/mock_setup/app/src/main/res/drawable/flyawayscreenshot2.PNG)
+
 # Coming soon...
 - Input for reference number only and flight data will be auto matically added.
 - Push notifiction for flights that are about to leave
 - Flight status information
+
+
+
 
