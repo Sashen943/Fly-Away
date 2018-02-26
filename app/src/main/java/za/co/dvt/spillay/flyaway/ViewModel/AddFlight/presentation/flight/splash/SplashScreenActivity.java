@@ -24,13 +24,13 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 changeScreen();
-                finish();
             }
         }, 3000);
     }
 
     public void changeScreen() {
         startActivity(new Intent(SplashScreenActivity.this, FlightListActivity.class));
+        finish();
     }
 }
 

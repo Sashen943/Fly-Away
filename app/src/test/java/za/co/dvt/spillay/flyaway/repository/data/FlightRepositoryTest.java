@@ -1,4 +1,4 @@
-package za.co.dvt.spillay.flyaway.repository;
+package za.co.dvt.spillay.flyaway.repository.data;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
+import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.FlightDao;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.repository.FlightRepository;
 
 import static org.mockito.Mockito.verify;
@@ -17,17 +18,25 @@ import static org.mockito.Mockito.verify;
 public class FlightRepositoryTest {
 
     @Mock
-    private FlightRepository mockRepository;
+    private FlightDao mockDao;
+    @Mock
+    private FlightRepository serviceUnderTest;
+    Flight mockFlight;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
+        // serviceUnderTest = new FlightRepository();
+        mockFlight = new Flight("#HGFRTY", "12/12/2018", "13:00", "Johannesburg", "Durban");
     }
 
     @Test
     public void testInsert() {
-        Flight mockFlight = new Flight("#HGFRTY", "12/12/2018", "13:00", "Johannesburg", "Durban");
-        mockRepository.insertFlight(mockFlight);
-        verify(mockRepository).insertFlight(mockFlight);
+        serviceUnderTest.insertFlight(mockFlight);
+        verify(serviceUnderTest).insertFlight(mockFlight);
     }
+
+
 }
+
+

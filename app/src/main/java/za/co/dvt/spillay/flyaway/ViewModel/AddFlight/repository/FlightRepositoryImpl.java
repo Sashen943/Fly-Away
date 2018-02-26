@@ -4,6 +4,8 @@ import android.arch.lifecycle.LiveData;
 
 import java.util.List;
 
+import io.reactivex.Completable;
+import io.reactivex.functions.Action;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.FlightDao;
 
@@ -20,12 +22,19 @@ public class FlightRepositoryImpl implements FlightRepository {
     }
 
     @Override
-    public void getFlight(int flightId, RepositoryCallback repositoryCallback) {
-        new GetFlightAsyncTask(flightId, flightDao, repositoryCallback).execute();
+    public LiveData<Flight> getFlight(int flightId) {
+        return flightDao.getFlightDetails(flightId);
     }
 
     @Override
-    public void insertFlight(Flight flight) {
-        new AddFlightAsyncTask(flightDao, flight).execute();
+    public Completable insertFlight(Flight flight) {
+        return Completable.fromAction(new Action() {
+            @Override
+            public void run() throws Exception {
+                flightDao.insert(flight);
+            }
+        });
     }
+
+
 }

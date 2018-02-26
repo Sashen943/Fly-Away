@@ -7,7 +7,7 @@ import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Validation;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * Created by SPillay on 2018/02/21.
+ * @author SPillay
  */
 
 
@@ -15,13 +15,14 @@ public class ValidationTest {
 
     @Test
     public void referenceNumberValidationTest() {
+        @SuppressWarnings("typos")
         String validReferenceNumber = "AFDRTY";
         String invalidReferenceNumber = "AFDRTY123";
 
         boolean valid = Validation.validateFlightReferenceNumber(validReferenceNumber);
         boolean invalid = Validation.validateFlightReferenceNumber(invalidReferenceNumber);
-        boolean expectedValid = true;
-        boolean expectedInvalid = false;
+        final boolean expectedValid = true;
+        final boolean expectedInvalid = false;
 
         assertEquals(expectedValid, valid);
         assertEquals(expectedInvalid, invalid);
@@ -37,8 +38,8 @@ public class ValidationTest {
         boolean invalid = Validation.validateFlightDate(invalidDate);
 
 
-        boolean expectedValid = true;
-        boolean expectedInvalid = false;
+        final boolean expectedValid = true;
+        final boolean expectedInvalid = false;
 
         assertEquals(expectedValid, valid);
         assertEquals(expectedInvalid, invalid);
@@ -54,8 +55,8 @@ public class ValidationTest {
         boolean invalid = Validation.validateFlightTime(invalidTime);
 
 
-        boolean expectedValid = true;
-        boolean expectedInvalid = false;
+        final boolean expectedValid = true;
+        final boolean expectedInvalid = false;
 
         assertEquals(expectedValid, valid);
         assertEquals(expectedInvalid, invalid);
@@ -70,8 +71,8 @@ public class ValidationTest {
         boolean invalid = Validation.validateCity(invalidCity);
 
 
-        boolean expectedValid = true;
-        boolean expectedInvalid = false;
+        final boolean expectedValid = true;
+        final boolean expectedInvalid = false;
 
         assertEquals(expectedValid, valid);
         assertEquals(expectedInvalid, invalid);

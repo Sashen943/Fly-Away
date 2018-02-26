@@ -16,5 +16,5 @@ public interface FlightDao {
     LiveData<List<Flight>> getAllFlights();
 
     @Query("SELECT * FROM Flights WHERE flightId=:flightId")
-    Flight getFlightDetails(int flightId);
+    LiveData<Flight> getFlightDetails(int flightId);
 }

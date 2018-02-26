@@ -16,7 +16,7 @@ import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.list.FlightListActivity;
 
 /**
- * Created by SPillay on 2018/02/12.
+ * @author SPillay
  */
 
 public class FlightDetailsActivity extends AppCompatActivity {
@@ -62,12 +62,11 @@ public class FlightDetailsActivity extends AppCompatActivity {
     //Sets up view model
     public void setupViewModel() {
         flightDetailsViewModel = ViewModelProviders.of(this).get(FlightDetailsViewModel.class);
-        flightDetailsViewModel.getFlightDetails(getFlightId());
-        flightDetailsViewModel.flight.observe(this, new Observer<Flight>() {
+        flightDetailsViewModel.getFlightDetails(getFlightId()).observe(this, new Observer<Flight>() {
             @Override
             public void onChanged(@Nullable Flight flight) {
-                Log.d("onChanged:", "Flight: " + flight.getReferenceNumber());
-                referenceNumberTextView.setText(flight.getReferenceNumber());
+                Log.d("onChanged:", "Flight: " + (flight != null ? flight.getReferenceNumber() : null));
+                referenceNumberTextView.setText(flight != null ? flight.getReferenceNumber() : null);
                 timeTextView.setText(flight.getTime());
                 toTextView.setText(flight.getTo());
                 fromTextView.setText(flight.getFrom());
@@ -79,7 +78,6 @@ public class FlightDetailsActivity extends AppCompatActivity {
     //gets flight id from previous activity
     public int getFlightId() {
         Bundle extras = getIntent().getExtras();
-        Log.d("Flight ID", extras.getString("FLIGHT_ID"));
         return Integer.parseInt(extras.getString("FLIGHT_ID"));
     }
 

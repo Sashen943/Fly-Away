@@ -3,17 +3,16 @@ package za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
 
 /**
- * Created by SPillay on 2018/02/05.
+ * @author SPillay
  */
 @Entity(tableName = "Flights")
 public class Flight {
-    @PrimaryKey(autoGenerate = true)
-    @NonNull
-    @ColumnInfo(name = "flightId")
 
+    @SuppressWarnings("")
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "flightId")
     private int flightId;
     private String referenceNumber;
     private String date;
@@ -59,12 +58,12 @@ public class Flight {
         return this.to;
     }
 
-    @NonNull
     public int getFlightId() {
         return this.flightId;
     }
 
-    public void setFlightId(@NonNull int flightId) {
+    public void setFlightId(int flightId) {
         this.flightId = flightId;
     }
+
 }

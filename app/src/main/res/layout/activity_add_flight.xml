@@ -49,30 +49,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/header_imageview" />
 
             <EditText
-                android:id="@+id/txt_flight_date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:ems="10"
-                android:hint="Date"
-                android:inputType="date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_flight_reference_number" />
-
-            <EditText
-                android:id="@+id/txt_flight_time"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Time"
-                android:inputType="time"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_flight_date" />
-
-            <EditText
                 android:id="@+id/txt_flight_from"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -84,7 +60,7 @@
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_flight_time" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_flight_reference_number" />
 
             <EditText
                 android:id="@+id/txt_flight_to"
@@ -106,13 +82,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:textAlignment="center"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_flight_to" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_time" />
 
             <Button
                 android:id="@+id/add_button"
@@ -141,6 +117,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/cardview_light_background"
                 android:elevation="0dp"
                 android:paddingLeft="8dp"
@@ -151,6 +128,62 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_button" />
+
+            <Button
+                android:id="@+id/button_date"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ic_date_range_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textview_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textview_date" />
+
+            <Button
+                android:id="@+id/button_time"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/clock_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/textview_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_date" />
+
+            <EditText
+                android:id="@+id/textview_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="@string/select_time_place_holder"
+                android:inputType="time"
+                app:layout_constraintEnd_toStartOf="@+id/button_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_date" />
+
+            <EditText
+                android:id="@+id/textview_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="@string/select_date_place_holder"
+                android:inputType="date"
+                app:layout_constraintEnd_toStartOf="@+id/button_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_flight_to" />
+
         </android.support.constraint.ConstraintLayout>
 
 

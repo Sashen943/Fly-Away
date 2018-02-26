@@ -14,4 +14,7 @@
     <string name="add_button">Add</string>
     <string name="splash_title">Fly Away</string>
     <string name="splash_subtitle">Never miss a flight again</string>
+    <string name="select_date_place_holder">Select a departure date</string>
+    <string name="select_time_place_holder">Select a departure time</string>
+
 </resources>

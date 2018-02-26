@@ -1,4 +1,4 @@
-package za.co.dvt.spillay.flyaway.data.data;
+package za.co.dvt.spillay.flyaway.data.data.data;
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule;
 import android.arch.persistence.room.Room;
@@ -68,6 +68,6 @@ public class FlightDaoTest {
     @Test
     public void onFetchSpecificFlight_checkIf_insertedFlightIsReturned() throws InterruptedException {
         flightDao.insert(flight);
-        assertEquals(1, flightDao.getFlightDetails(1).getFlightId());
+        assertEquals(1, flightDao.getFlightDetails(1).getValue().getFlightId());
     }
 }

@@ -2,7 +2,7 @@ package za.co.dvt.spillay.flyaway.ViewModel.AddFlight.presentation.flight.detail
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.LiveData;
 
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.Injection;
 import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.data.Flight;
@@ -15,25 +15,15 @@ import za.co.dvt.spillay.flyaway.ViewModel.AddFlight.repository.FlightRepository
 public class FlightDetailsViewModel extends AndroidViewModel {
 
     FlightRepository flightRepository;
-    MutableLiveData<Flight> flight = new MutableLiveData<>();
+    LiveData<Flight> flight;
 
     public FlightDetailsViewModel(Application application) {
         super(application);
         flightRepository = Injection.getFlightRepositoryInstance(application);
     }
 
-    public void getFlightDetails(int flightId) {
-        flightRepository.getFlight(flightId, new FlightRepository.RepositoryCallback() {
-            @Override
-            public void onFlightLoaded(Flight loadedFlight) {
-                flight.postValue(loadedFlight);
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
-
+    public LiveData<Flight> getFlightDetails(int flightId) {
+        return flightRepository.getFlight(flightId);
     }
+
 }

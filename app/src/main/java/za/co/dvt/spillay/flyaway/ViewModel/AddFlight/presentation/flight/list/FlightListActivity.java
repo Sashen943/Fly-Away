@@ -50,6 +50,7 @@ public class FlightListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FlightListActivity.this, AddFlightActivity.class));
+                finish();
             }
         });
     }
